@@ -36,8 +36,50 @@ Quick overview of most useful conda commands
 ## Recreate env from export
 * `conda env create -f environment.yaml`
 
-# Update conda
+## Update conda
 * `conda update conda`
   * Updates conda in current environment
 * `conda update -n base conda`
   * Updates conda in "base" environment
+
+
+# How to make `conda` work behind firewall / proxy?
+
+## Allow connectivity to public servers
+```
+*.pypi.org
+*.pythonhosted.org
+*.continuum.io
+* anaconda.com
+*.conda.io
+*.github.com
+*.githubusercontent.com
+*.npmjs.com
+*.yarnpkg.com
+```
+
+## Set PROXY server into system variables
+* `set HTTP_PROXY=http://user:password@proxy.server.com:PORT`
+* `set HTTPS_PROXY=https://user:password@proxy.server.com:PORT`
+
+## conda
+* `conda config --set ssl_verify False`
+  * Disable SSL for conda
+
+## pip
+* `pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org pandas`
+  * Trusted host does not require SSL
+* `pip install --proxy=http://user:password@proxy.server.com:PORT pandas`
+  * Install using defined proxy server
+  
+## npm
+* Disables SSL
+  * `npm set strict-ssl False`
+* Set proxy for both http + https
+  * `npm config set proxy http://user:password@proxy.server.com:PORT`
+  * `npm config set proxy httpS://user:password@proxy.server.com:PORT`
+* Set registry (optional)
+  * `npm config set registry http://registry.npmjs`
+
+
+
