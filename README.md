@@ -35,3 +35,9 @@ Quick overview of most useful conda commands
 
 ## Recreate env from export
 * `conda env create -f environment.yaml`
+
+# Update conda
+* `conda update conda`
+  * Updates conda in current environment
+* `conda update -n base conda`
+  * Updates conda in "base" environment
