@@ -39,6 +39,14 @@ Quick overview of most useful conda commands
 ## Recreate env from export
 * `conda env create -n my_env -f environment.yaml`
 
+## Conda channels
+* `conda config --show channels`
+  * Show channels
+* `conda config --add channels <channel-name>`
+  * Add channel as first on the list
+* `conda config --append channels <channel-name>`
+  * Add channel as last on the list
+
 ## Update conda
 * `conda update conda`
   * Updates conda in current environment
