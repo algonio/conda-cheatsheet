@@ -30,11 +30,14 @@ Quick overview of most useful conda commands
 ## Remove environment
 * `conda remove -n py39 --all`
 
+## Rename environment
+* `conda rename -n old_env new_env`
+
 ## Export environment
 * `conda env export  --no-builds > environment.yaml`
 
 ## Recreate env from export
-* `conda env create -f environment.yaml`
+* `conda env create -n my_env -f environment.yaml`
 
 ## Update conda
 * `conda update conda`
